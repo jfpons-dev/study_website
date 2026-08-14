@@ -1,3 +1,8 @@
+<?php
+$version = '1.0.0';
+$phpVersion = PHP_VERSION;
+$serverTime = date('Y-m-d H:i:s');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -34,6 +39,16 @@
       font-family: ui-monospace, monospace;
       font-size: 0.95rem;
       color: #38bdf8;
+      margin-bottom: 1.5rem;
+    }
+    .meta {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-family: ui-monospace, monospace;
+    }
+    .meta span {
+      display: block;
+      margin-top: 0.35rem;
     }
   </style>
 </head>
@@ -41,7 +56,11 @@
   <main>
     <h1>Study Website</h1>
     <p>Projet DevOps — déploiement continu</p>
-    <div class="version">v1.0.0</div>
+    <div class="version">v<?= htmlspecialchars($version) ?></div>
+    <div class="meta">
+      <span>PHP <?= htmlspecialchars($phpVersion) ?></span>
+      <span><?= htmlspecialchars($serverTime) ?></span>
+    </div>
   </main>
 </body>
 </html>
